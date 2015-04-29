@@ -45,16 +45,15 @@
   with_items:
     - iterm2
     - diffmerge
-    #- postgres
     - xquartz
     - wkhtmltopdf
     - charles
     - dropbox
     - flash
     - flux
-    #- istat-menus
     - trailer
-
+    - phantomjs
+    - postgres
   when: ansible_os_family == 'Darwin'
 
 - name: install items dependent on xquartz
@@ -63,8 +62,6 @@
     - qt
     - poppler
   when: ansible_os_family == 'Darwin'
-
-
 
 - name: apply OS X for hackers settings
   script: osx

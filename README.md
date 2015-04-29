@@ -1,19 +1,30 @@
-# Personal computer configuration.
+# Developer Laptop Configuration.
 
-This is my personal configuration bootstrapper. There are many like it, but
-this one is mine.
+This is a relatively simple ansible setup heavily based on
+https://github.com/zacs/setup as well as scripts from Jack and
+sproutwrap chef recipes from Andrew.
 
-For that reason it's largely set up for my particular needs. If you want
-to use it yourself I'd recommend reading through it first. Remove as
-much as possible and build up, making changes as you go, so it fits your
-needs.
+This setup is intended to install most libraries and applications. After
+running this a developer should install their own dotfiles and make
+their own custom configurations.
 
-### Set up
+### Set Up
+
+Given you have a laptop you wish to setup you should:
+
+* erase the hard drive
+* install the latest OSX (tested on Yosemite)
+* join the wireless network
+* configure the Mac for user, not using Apple ID
+* run software update
+* install the latest XCode
+* run `xcode-select --install` to install command line tools
+* continue with the steps below
 
 To install, all you need to do is run `bootstrap.sh` remotely. It will install some pre-requisites (gcc,
 [Homebrew](http://brew.sh/), git, and [Ansible](http://docs.ansible.com/)) and will then clone this repo locally (by default it clones into `~/.setup`) and run the playbook:
 
-    $ curl -fsSL https://raw.githubusercontent.com/andrewmacgregor/setup/master/bootstrap.sh | sh
+    $ curl -fsSL https://raw.githubusercontent.com/agworld/setup/master/bootstrap.sh | sh
 
 If you prefer not to run code remotely, you just need to clone the repo down wherever you would like, and run:
 
@@ -30,23 +41,42 @@ before it executes the playbook.
 If it's your first time, go brew some coffee or tea because this will
 take some time building packages.
 
-### Why?
+### Manual Steps After Running Ansible
 
-When planning to replace my previous computer I wanted to make sure I
-could replicate the environment. More specifically, only the aspects of
-the previous environment that I wanted to keep.
+These will gradually become part of the automated ansible script.
 
-GitHub's Boxen looked great but overkill, and I wanted to learn Ansible,
-so here we are.
+#### Install Rvm & Ruby
+
+    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    \curl -sSL https://get.rvm.io | bash -s stable
+    rvm install ruby-2.1.3
+
+#### Install Good Font That Doesn't Suck
+    cd /tmp/
+    curl https://codeload.github.com/adobe-fonts/source-code-pro/zip/1.017R > font.zip
+    unzip font.zip
+    open source-code-pro-1.017R/OTF/*
+    cd -
+
+Don't forget to actually click install to install the font.
+
+#### Symlink ghostscript fonts
+    ln -nfs /usr/local/share/ghostscript/fonts /usr/local/share/ghostscript/fontsx
+
+#### Install prince
+    brew install https://raw.github.com/staticfloat/homebrew-alt/master/non-free/princexml.rb
+
+#### Install zeromq
+    brew install zeromq22
 
 ### Credits
 
-The original inspiration was Michael Griffin's
-[ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)
+https://github.com/zacs/setup
+
+Michael Griffin's [ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)
 repository. That collection is far more complete.
 
-I later borrowed some bootstrap scripting from Daniel Jaouen's
-blog post, [How I Fully Automated OS X Provisioning With
+[How I Fully Automated OS X Provisioning With
 Ansible](http://il.luminat.us/blog/2014/04/19/how-i-fully-automated-os-x-with-ansible/).
 
 ### License
