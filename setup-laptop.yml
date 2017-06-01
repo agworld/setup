@@ -1,0 +1,27 @@
+---
+
+- name: "Setup Laptop"
+  hosts: laptop
+  roles:
+    - role: homebrew
+      tags:
+       - homebrew
+    - role: osx_defaults
+      tags:
+       - defaults
+
+  tasks:
+  - name: Create ~/workdir
+    file:
+      dest: "~/workdir"
+      state: directory
+  - name: Create ~/.ssh
+    file:
+      dest: "~/.ssh"
+      state: directory
+  - name: Copy ProFont
+    copy:
+      src: "ProFont_r400-11.dfont"
+      dest: "~/Library/Fonts/"
+    tags:
+      - fonts

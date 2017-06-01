@@ -13,7 +13,7 @@ their own custom configurations.
 Given you have a laptop you wish to setup you should:
 
 * erase the hard drive
-* install the latest OSX (tested on Yosemite)
+* install the latest OSX (tested on Sierra)
 * join the wireless network
 * configure the Mac for user, not using Apple ID
 * run software update
@@ -33,7 +33,7 @@ If you prefer not to run code remotely, you just need to clone the repo down whe
 After installing the prerequisites this will run the `local` playbook
 for the first time. If for some reason `bootstrap.sh` barfs, you can run the playbook manually via:
 
-    $ ansible-playbook local.yml -K
+    $ ansible-playbook setup-laptop.yml -K
 
 The `-K` flag means that Ansible will prompt you for your sudo password
 before it executes the playbook.
@@ -45,18 +45,9 @@ take some time building packages.
 
 These will gradually become part of the automated ansible script.
 
-#### Install Rvm & Ruby
+### Run extra_default_user_setup.sh
 
-    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-    \curl -sSL https://get.rvm.io | bash -s stable
-    rvm install ruby-2.1.3
-
-#### Install Good Font That Doesn't Suck
-    cd /tmp/
-    curl https://codeload.github.com/adobe-fonts/source-code-pro/zip/1.017R > font.zip
-    unzip font.zip
-    open source-code-pro-1.017R/OTF/*
-    cd -
+This will setup RVM, install Ruby, do a few Homebrew steps.  This script is not actually production ready, therefore it's imperative you actually open it up and read through and run the commands manually.
 
 Don't forget to actually click install to install the font.
 

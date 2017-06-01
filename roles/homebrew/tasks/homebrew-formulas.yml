@@ -1,0 +1,9 @@
+---
+
+- name: Install Homebrew Formulas
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew.formulas }}"
+
+# vim:set ft=ansible:

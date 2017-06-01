@@ -1,0 +1,196 @@
+---
+
+defaults:
+  - domain: NSGlobalDomain
+    key: NSWindowResizeTime
+    type: float
+    value: 0.001
+  - domain: com.apple.dock
+    key: expose-animation-duration
+    type: float
+    value: 0
+  - domain: com.apple.dock
+    key: minimize-to-application
+    type: bool
+    value: true
+  - domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+  - domain: com.apple.dock
+    key: autohide-delay
+    type: float
+    value: 0.15
+  - domain: com.apple.dock
+    key: autohide-time-modifier
+    type: float
+    value: 0
+  - domain: com.apple.dock
+    key: showhidden
+    type: bool
+    value: true
+  - domain: NSGlobalDomain
+    key: AppleScrollerPagingBehavior # Jump to the spot that's clicked
+    type: bool
+    value: true
+  - domain: com.apple.QuickTimePlayerX
+    key: MGPlayMovieOnOpen # Auto-play videos when opened with QuickTime Player
+    type: bool
+    value: true
+  - domain: com.apple.ActivityMonitor
+    key: ShowCategory # Show all processes in Activity Monitor
+    type: int
+    value: 0
+  - domain: com.apple.ActivityMonitor
+    key: NetworkGraphType # Show data rate instead of the default packet rate
+    type: int
+    value: 1
+  - domain: com.apple.TimeMachine
+    key: DoNotOfferNewDisksForBackup # Prevent Time Machine from prompting to use new hard drives as backup volume
+    type: bool
+    value: true
+  - domain: com.googlecode.iterm2
+    key: ShowPaneTitles
+    type: bool
+    value: false
+  - domain: com.googlecode.iterm2
+    key: UseLionStyleFullscreen
+    type: bool
+    value: false
+  - domain: com.googlecode.iterm2
+    key: HideScrollbar
+    type: bool
+    value: true
+  - domain: com.googlecode.iterm2
+    key: PromptOnQuit # Don’t display the annoying prompt when quitting iTerm
+    type: bool
+    value: false
+  - domain: com.googlecode.iterm2
+    key: LoadPrefsFromCustomFolder
+    type: bool
+    value: true
+  - domain: com.apple.mail
+    key: DisableReplyAnimations
+    type: bool
+    value: true
+  - domain: com.apple.mail
+    key: DisableSendAnimations
+    type: bool
+    value: true
+  - domain: com.apple.mail
+    key: AddressesIncludeNameOnPasteboard
+    type: bool
+    value: false
+  - domain: com.apple.finder
+    key: FXEnableExtensionChangeWarning # Disable the warning when changing a file extension
+    type: bool
+    value: false
+  - domain: com.apple.finder
+    key: FXDefaultSearchScope # When performing a search, search the current folder by default
+    type: string
+    value: "SCcf"
+  - domain: com.apple.finder
+    key: DisableAllAnimations # Finder: disable window animations and Get Info animations
+    type: bool
+    value: true
+  - domain: com.apple.screensaver
+    key: askForPassword
+    type: int
+    value: 1
+  - domain: com.apple.screensaver
+    key: askForPasswordDelay
+    type: float
+    value: 5
+  - domain: NSGlobalDomain
+    key: AppleKeyboardUIMode # Enable full keyboard access for all controls
+    type: int
+    value: 2
+  - domain: NSGlobalDomain
+    key: com.apple.swipescrolldirection # Disable “natural” (Lion-style) scrolling
+    type: bool
+    value: false
+  - domain: com.apple.print.PrintingPrefs
+    key: "Quit When Finished" # Automatically quit printer app once the print jobs complete
+    type: bool
+    value: true
+  - domain: com.apple.LaunchServices
+    key: LSQuarantine # Disable the “Are you sure you want to open this application?” dialog
+    type: bool
+    value: false
+  - domain: com.apple.screensaver
+    host: "currentHost"
+    key: idleTime
+    type: int
+    value: 300
+  - domain: com.apple.menuextra.clock
+    key: DateFormat
+    type: string
+    value: "EEE d MMM  HH:mm:ss"
+  - domain: NSGlobalDomain
+    key: AppleICUForce24HourTime
+    type: bool
+    value: true
+  - domain: NSGlobalDomain
+    key: KeyRepeat # Key Repeat
+    type: int
+    value: 2
+  - domain: NSGlobalDomain
+    key: InitialKeyRepeat # Delay Until Repeat
+    type: int
+    value: 25
+  - domain: NSGlobalDomain
+    key: com.apple.keyboard.fnState # Use F1, F2, etc. keys as standard function keys
+    type: bool
+    value: true
+  - domain: NSGlobalDomain
+    key: NSAutomaticDashSubstitutionEnabled # Use smart quotes and dashes
+    type: bool
+    value: false
+  - domain: NSGlobalDomain
+    key: NSAutomaticQuoteSubstitutionEnabled # Use smart quotes and dashes
+    type: bool
+    value: false
+  - domain: NSGlobalDomain
+    key: NSAutomaticWindowAnimationsEnabled # Disable animations when opening and closing windows
+    type: bool
+    value: false
+  - domain: NSGlobalDomain
+    key: QLPanelAnimationDuration # Disable animations when opening a Quick Look window
+    type: float
+    value: 0
+  - domain: com.apple.dock
+    key: springboard-show-duration # Disable Launchpad show animation
+    type: int
+    value: 0
+  - domain: com.apple.dock
+    key: springboard-hide-duration # Disable Launchpad hide animation
+    type: int
+    value: 0
+  - domain: NSGlobalDomain
+    key: com.apple.mouse.scaling # Mouse tracking speed
+    type: float
+    value: 2
+  - domain: NSGlobalDomain
+    key: com.apple.scrollwheel.scaling # Mouse scrolling speed
+    type: float
+    value: 0.125
+  - domain: NSGlobalDomain
+    key: com.apple.trackpad.scaling # Trackpad tracking speed
+    type: float
+    value: 0.5
+  - domain: com.apple.menuextra.battery
+    key: ShowPercent
+    type: bool
+    value: true
+  - domain: com.apple.iCal
+    key: "first day of week"
+    type: int
+    value: 1
+  - domain: /Library/Preferences/com.apple.SoftwareUpdate.plist
+    key: AutomaticDownload
+    type: bool
+    value: false
+  - domain: /Library/Preferences/com.apple.loginwindow.plist
+    key: SHOWFULLNAME
+    type: bool
+    value: true

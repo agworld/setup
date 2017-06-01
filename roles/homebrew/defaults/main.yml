@@ -1,0 +1,48 @@
+---
+
+homebrew:
+  taps:
+    - caskroom/fonts
+    - homebrew/dupes
+  formulas:
+    - autoconf
+    - automake
+    - awscli
+    - bash
+    - bash-completion
+    - cmake
+    - coreutils
+    - ctags
+    - findutils
+    - git
+    - go
+    - gpg
+    - htop
+    - jq
+    - ncdu
+    - openssl
+    - pcre
+    - readline
+    - tig
+    - tmux
+    - the_silver_searcher
+    - tree
+    - wget
+  casks:
+    - firefox
+    - flash-npapi
+    - flux
+    - google-chrome
+    - hipchat
+    - iterm2
+  fonts:
+    - font-anonymous-pro
+    - font-dejavu-sans
+    - font-fira-sans
+    - font-inconsolata
+    - font-liberation-sans
+    - font-source-code-pro
+    - font-source-sans-pro
+    - font-terminus
+    - font-ubuntu
+

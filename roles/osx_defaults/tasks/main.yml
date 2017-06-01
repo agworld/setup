@@ -1,0 +1,20 @@
+---
+
+- name: Configure macOS defaults
+  osx_defaults:
+    domain: "{{ item.domain }}"
+    key: "{{ item.key }}"
+    host: "{{ item.host | default(omit) }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  with_items: "{{ defaults }}"
+
+- name: Defaults | Disable smart quotes
+  become: true
+  command: defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
+    
+- name: Defaults | Disable Spotlight indexing for any newly mounted volume
+  become: true
+  command: defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+
+# vim:set ft=ansible:
