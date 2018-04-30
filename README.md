@@ -10,15 +10,15 @@ their own custom configurations.
 
 ### Set Up
 
+**NOTE** this README assumes you are running the setup scripts and Ansible playbooks on the system that is being installed.  The current preferred method is to run them from an existing system, which connects to the new system over SSH to perform the same steps.  See the documentation on the Confluence wiki page, [Laptop Setup](https://agworld.atlassian.net/wiki/spaces/DEV/pages/567804018/Laptop+Setup) for a more relavant guide.
+
 Given you have a laptop you wish to setup you should:
 
 * erase the hard drive
 * install the latest OSX (tested on Sierra)
 * join the wireless network
-* configure the Mac for user, not using Apple ID
+* configure the Mac for a user, not using Apple ID
 * run software update
-* install the latest XCode
-* run `xcode-select --install` to install command line tools
 * continue with the steps below
 
 To install, all you need to do is run `bootstrap.sh` remotely. It will install some pre-requisites (gcc,

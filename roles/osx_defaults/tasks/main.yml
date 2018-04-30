@@ -9,10 +9,17 @@
     value: "{{ item.value }}"
   with_items: "{{ defaults }}"
 
+- name: Defaults | Display login window as name and password
+  become: true
+  command: defaults write /Library/Preferences/com.apple.loginwindow.plist SHOWFULLNAME -bool true
+
+- name: Defaults | Show volume and Blutooth in menu bar
+  command: defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Clock.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Displays.menu" "/System/Library/CoreServices/Menu Extras/Volume.menu" "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
+
 - name: Defaults | Disable smart quotes
   become: true
   command: defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
-    
+
 - name: Defaults | Disable Spotlight indexing for any newly mounted volume
   become: true
   command: defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"

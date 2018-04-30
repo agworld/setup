@@ -20,7 +20,7 @@ defaults:
   - domain: com.apple.dock
     key: autohide-delay
     type: float
-    value: 0.15
+    value: 0
   - domain: com.apple.dock
     key: autohide-time-modifier
     type: float
@@ -66,6 +66,10 @@ defaults:
     type: bool
     value: false
   - domain: com.googlecode.iterm2
+    key: PrefsCustomFolder
+    type: string
+    value: "/Users/{{ ansible_user_id }}/Documents"
+  - domain: com.googlecode.iterm2
     key: LoadPrefsFromCustomFolder
     type: bool
     value: true
@@ -106,7 +110,7 @@ defaults:
     type: int
     value: 2
   - domain: NSGlobalDomain
-    key: com.apple.swipescrolldirection # Disable “natural” (Lion-style) scrolling
+    key: com.apple.swipescrolldirection # Disable "natural" (Lion-style) scrolling
     type: bool
     value: false
   - domain: com.apple.print.PrintingPrefs
@@ -114,7 +118,7 @@ defaults:
     type: bool
     value: true
   - domain: com.apple.LaunchServices
-    key: LSQuarantine # Disable the “Are you sure you want to open this application?” dialog
+    key: LSQuarantine # Disable the "Are you sure you want to open this application?" dialog
     type: bool
     value: false
   - domain: com.apple.screensaver
@@ -169,11 +173,19 @@ defaults:
   - domain: NSGlobalDomain
     key: com.apple.mouse.scaling # Mouse tracking speed
     type: float
-    value: 2
+    value: 2.5
   - domain: NSGlobalDomain
     key: com.apple.scrollwheel.scaling # Mouse scrolling speed
     type: float
     value: 0.125
+  - domain: com.apple.driver.AppleBluetoothMultitouch.trackpad # Trackpad: enable tap to click for this user
+    key: Clicking
+    type: int
+    value: 1
+  - domain: com.apple.AppleMultitouchTrackpad # Trackpad: enable tap to click for this user
+    key: Clicking
+    type: int
+    value: 1
   - domain: NSGlobalDomain
     key: com.apple.trackpad.scaling # Trackpad tracking speed
     type: float
@@ -190,7 +202,3 @@ defaults:
     key: AutomaticDownload
     type: bool
     value: false
-  - domain: /Library/Preferences/com.apple.loginwindow.plist
-    key: SHOWFULLNAME
-    type: bool
-    value: true
