@@ -1,7 +1,7 @@
 ---
 
 - name: "Setup Laptop"
-  hosts: laptop
+  hosts: all
   roles:
     - role: homebrew
       tags:

@@ -192,8 +192,8 @@ defaults:
     value: 0.5
   - domain: com.apple.menuextra.battery
     key: ShowPercent
-    type: bool
-    value: true
+    type: string
+    value: YES
   - domain: com.apple.iCal
     key: "first day of week"
     type: int
