@@ -9,9 +9,4 @@
 - include: homebrew-casks.yml
 - include: homebrew-fonts.yml
 
-- name:
-  homebrew:
-    name: homebrew/dupes/grep
-    install_options: with-default-names
-
 # vim:set ft=ansible:

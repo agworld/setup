@@ -3,7 +3,6 @@
 homebrew:
   taps:
     - caskroom/fonts
-    - homebrew/dupes
   formulas:
     - autoconf
     - automake
@@ -45,4 +44,3 @@ homebrew:
     - font-source-sans-pro
     - font-terminus
     - font-ubuntu
-
