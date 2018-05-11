@@ -3,9 +3,6 @@
 echo "ERROR: This script doesn't work automatically yet!!! Run it manually for now on the laptop you're setting up."
 exit 1
 
-# Create a default workspace
-mkdir ~/workspace
-
 # Install Pow (c.f: http://pow.cx/):
 curl get.pow.cx | sh
 cd ~/.pow

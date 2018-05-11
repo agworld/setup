@@ -11,9 +11,9 @@
        - defaults
 
   tasks:
-  - name: Create ~/workdir
+  - name: Create ~/workspace
     file:
-      dest: "~/workdir"
+      dest: "~/workspace"
       state: directory
   - name: Create ~/.ssh
     file:
