@@ -4,9 +4,23 @@
   homebrew:
     update_homebrew: yes
 
+- name: Create Caskroom directory
+  become: true
+  file:
+    path: /usr/local/Caskroom
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: admin
+    mode: 0775
+
 - include: homebrew-taps.yml
 - include: homebrew-formulas.yml
 - include: homebrew-casks.yml
 - include: homebrew-fonts.yml
+
+- name:
+  homebrew:
+    name: grep
+    install_options: with-default-names
 
 # vim:set ft=ansible:
