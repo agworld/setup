@@ -14,4 +14,8 @@ ln -s ~/workspace/reporting-service
 # Install rvm (c.f: https://rvm.io/):
 # c.f: https://stackoverflow.com/questions/15691977/why-start-a-shell-command-with-a-backslash
 curl -sSL https://get.rvm.io | bash -s stable
+# NOTE: For the next command to work, you'll need a new shell that has rvm loaded from $PATH!
+# OR running the equivalent command to:
+# source /Users/newdev/.rvm/scripts/rvm
+# will work, where `newdev` need to be replaced with the user's home directory name.
 rvm install 2.3.1
