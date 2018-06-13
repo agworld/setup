@@ -15,7 +15,12 @@
     file:
       dest: "~/workspace"
       state: directory
-  - name: Create ~/.ssh
-    file:
-      dest: "~/.ssh"
-      state: directory
+  - name: Change default shell to Homebrew Bash
+    become: true
+    command: chpass -s /usr/local/bin/bash "{{ ansible_ssh_user }}"
+    tags:
+     - chpass
+  - name: Install RVM
+    shell: "curl -sSL https://get.rvm.io | bash -s stable"
+    tags:
+     - rvm

@@ -19,8 +19,10 @@ homebrew:
     - htop
     - jq
     - ncdu
+    - openssh
     - openssl
     - pcre
+    - pow
     - readline
     - tig
     - tmux
