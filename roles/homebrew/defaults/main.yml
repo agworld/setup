@@ -13,11 +13,15 @@ homebrew:
     - coreutils
     - ctags
     - findutils
+    - swig
+    - geos
+    - proj
     - git
     - go
     - gpg
     - htop
     - jq
+    - mdbtools
     - ncdu
     - openssh
     - openssl
@@ -30,12 +34,17 @@ homebrew:
     - tree
     - wget
   casks:
+    - diffmerge
     - firefox
     - flash-npapi
     - flux
     - google-chrome
     - hipchat
     - iterm2
+    - p4v
+    - postgres
+    - trailer
+    - wkhtmltopdf
   fonts:
     - font-anonymous-pro
     - font-dejavu-sans

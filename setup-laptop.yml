@@ -2,6 +2,14 @@
 
 - name: "Setup Laptop"
   hosts: all
+
+  pre_tasks:
+  - name: Install imagemagick 6
+    homebrew:
+      name: "imagemagick@6"
+      state: present
+      install_options: "with-ghostscript"
+
   roles:
     - role: homebrew
       tags:
