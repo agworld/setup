@@ -16,7 +16,6 @@
 - include: homebrew-taps.yml
 - include: homebrew-formulas.yml
 - include: homebrew-casks.yml
-- include: homebrew-fonts.yml
 
 - name:
   homebrew:

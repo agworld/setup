@@ -1,8 +1,6 @@
 ---
 
 homebrew:
-  taps:
-    - caskroom/fonts
   formulas:
     - autoconf
     - automake
@@ -45,13 +43,3 @@ homebrew:
     - postgres
     - trailer
     - wkhtmltopdf
-  fonts:
-    - font-anonymous-pro
-    - font-dejavu-sans
-    - font-fira-sans
-    - font-inconsolata
-    - font-liberation-sans
-    - font-source-code-pro
-    - font-source-sans-pro
-    - font-terminus
-    - font-ubuntu
