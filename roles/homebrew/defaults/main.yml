@@ -37,6 +37,7 @@ homebrew:
     - flash-npapi # Note that it often hangs here and so you need to install manually with `brew cask install xxx`
     - flux
     - google-chrome
+    - slack
     - iterm2
     - p4v
     - trailer
