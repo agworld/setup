@@ -33,13 +33,12 @@ homebrew:
     - wget
   casks:
     - diffmerge
-    - firefox
-    - flash-npapi
+    - firefox # Note that it often hangs here and so you need to install manually with `brew cask install xxx`
+    - flash-npapi # Note that it often hangs here and so you need to install manually with `brew cask install xxx`
     - flux
     - google-chrome
-    - hipchat
+    - slack
     - iterm2
     - p4v
-    - postgres
     - trailer
     - wkhtmltopdf
