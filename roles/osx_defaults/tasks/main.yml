@@ -20,9 +20,4 @@
   become: true
   command: defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
-# Consider removing this. It looks broken for "Mojave", although I cannot find a replacement configuration.
-- name: Defaults | Disable Spotlight indexing for any newly mounted volume
-  become: true
-  command: defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
-
 # vim:set ft=ansible:
