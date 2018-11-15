@@ -202,3 +202,7 @@ defaults:
     key: AutomaticDownload
     type: bool
     value: false
+  - domain: NSGlobalDomain
+    key: CGFontRenderingFontSmoothingDisabled
+    type: bool
+    value: NO

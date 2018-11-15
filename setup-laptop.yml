@@ -11,12 +11,12 @@
       install_options: "with-ghostscript"
 
   roles:
-    - role: homebrew
-      tags:
-       - homebrew
     - role: osx_defaults
       tags:
        - defaults
+    - role: homebrew
+      tags:
+       - homebrew
 
   tasks:
   - name: Create ~/workspace
