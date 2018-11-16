@@ -28,10 +28,3 @@
   with_items: "{{ homebrew.casks }}"
   tags:
    - casks
-
-- name:
-  homebrew:
-    name: grep
-    install_options: with-default-names
-
-# vim:set ft=ansible:

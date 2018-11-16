@@ -32,3 +32,48 @@
     shell: "curl -sSL https://get.rvm.io | bash -s stable"
     tags:
      - rvm
+
+  - name: Install grep
+    homebrew:
+      name: grep
+      install_options: with-default-names
+    tags:
+     - formulas
+
+  - name: Pow | Install Pow
+    homebrew:
+      name: pow
+      state: present
+    tags:
+     - formulas
+
+  - name: Pow | Create the required host directories for Pow
+    become: true
+    file:
+      path: "/Users/{{ ansible_user_id }}/Library/Application Support/Pow/Hosts"
+      state: directory
+      owner: "{{ ansible_user_id }}"
+      group: staff
+      mode: 0775
+    tags:
+     - pow
+  - name: Pow | Create a symlink to the host directories for Pow
+    file:
+      src: "/Users/{{ ansible_user_id }}/Library/Application Support/Pow/Hosts"
+      dest: "/Users/{{ ansible_user_id }}/.pow"
+      state: link
+      force: yes
+    tags:
+     - pow
+  - name: Pow | Create symlinks in ~/.pow
+    file:
+      src: "~/workspace/{{ item }}"
+      dest: "~/.pow/{{ item }}"
+      state: link
+      force: yes
+    loop:
+       - docsplit-server
+       - website
+    tags:
+     - pow
+

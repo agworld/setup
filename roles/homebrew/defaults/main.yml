@@ -32,6 +32,7 @@ homebrew:
     - tree
     - wget
   casks:
+    - dashlane
     - diffmerge
     - firefox # Note that it often hangs here and so you need to install manually with `brew cask install xxx`
     - flash-npapi # Note that it often hangs here and so you need to install manually with `brew cask install xxx`
@@ -40,5 +41,6 @@ homebrew:
     - slack
     - iterm2
     - p4v
+    - prince
     - trailer
     - wkhtmltopdf
