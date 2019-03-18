@@ -1,9 +1,0 @@
----
-
-- name: Install Homebrew Casks
-  homebrew_cask:
-    name: "{{ item }}"
-    state: present
-  with_items: "{{ homebrew.casks }}"
-
-# vim:set ft=ansible:
