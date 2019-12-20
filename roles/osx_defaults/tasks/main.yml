@@ -8,6 +8,7 @@
     type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items: "{{ defaults }}"
+  ignore_errors: true
 
 - name: Defaults | Display login window as name and password
   become: true
@@ -20,4 +21,6 @@
   become: true
   command: defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
-# vim:set ft=ansible:
+- name: Defaults | Set ISO8601 AppleFirstWeekday
+  become: true
+  command: defaults write NSGlobalDomain AppleFirstWeekday -dict "gregorian" -int 1
