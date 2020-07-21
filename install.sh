@@ -251,52 +251,56 @@ if [[ ! -x /usr/local/bin/brew ]]; then
         slack \
         vyprvpn \
         zoomus
+fi
 
-    if [[ -n "${AGW_user_group}" ]] && [[ "$AGW_user_group" == "develop"* ]]; then
-        brew install \
-            autoconf \
-            automake \
-            awscli \
-            bash \
-            bash-completion \
-            cmake \
-            coreutils \
-            ctags \
-            findutils \
-            geos \
-            git \
-            go \
-            gpg \
-            grep \
-            htop \
-            jq \
-            mdbtools \
-            ncdu \
-            node \
-            openssh \
-            openssl \
-            pcre \
-            pow \
-            proj \
-            readline \
-            ruby \
-            swig \
-            the_silver_searcher \
-            tig \
-            tmux \
-            tree \
-            wget
+if [[ -n "${AGW_user_group}" ]] && [[ "$AGW_user_group" == "develop"* ]]; then
+    brew install \
+        autoconf \
+        automake \
+        awscli \
+        bash \
+        bash-completion \
+        cmake \
+        coreutils \
+        ctags \
+        findutils \
+        geos \
+        git \
+        go \
+        gpg \
+        grep \
+        htop \
+        jq \
+        mdbtools \
+        ncdu \
+        node \
+        openssh \
+        openssl \
+        pcre \
+        pow \
+        proj \
+        readline \
+        ruby \
+        swig \
+        the_silver_searcher \
+        tig \
+        tmux \
+        tree \
+        wget
 
-        mkdir ~/workspace
-        POW_HOSTS_DIR=~"/Library/Application Support/Pow/Hosts"
-        mkdir -p "${POW_HOSTS_DIR}"
-        chmod 0775 "${POW_HOSTS_DIR}"
-        ln -sf "${POW_HOSTS_DIR}" ~/.pow
+    mkdir ~/workspace
+    POW_HOSTS_DIR=~"/Library/Application Support/Pow/Hosts"
+    mkdir -p "${POW_HOSTS_DIR}"
+    chmod 0775 "${POW_HOSTS_DIR}"
+    ln -sf "${POW_HOSTS_DIR}" ~/.pow
 
-        for item in docsplit-server website; do
-            ln -sf ~"/workspace/${item}" ~"/.pow/${item}"
-        done
+    for item in docsplit-server website; do
+        ln -sf ~"/workspace/${item}" ~"/.pow/${item}"
+    done
 
+    if [[ ! -x "/Users/${HOME}/.rvm/bin/rvm" ]]; then
+        command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+        command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
         curl -sSL https://get.rvm.io | bash -s stable
         rvm install 2.6.5
     fi
