@@ -289,7 +289,7 @@ if [[ -n "${AGW_user_group}" ]] && [[ "$AGW_user_group" == "develop"* ]]; then
         wget
 
     mkdir ~/workspace
-    POW_HOSTS_DIR=~"/Library/Application Support/Pow/Hosts"
+    POW_HOSTS_DIR="${HOME}/Library/Application Support/Pow/Hosts"
     mkdir -p "${POW_HOSTS_DIR}"
     chmod 0775 "${POW_HOSTS_DIR}"
     ln -sf "${POW_HOSTS_DIR}" ~/.pow
