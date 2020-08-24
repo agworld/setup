@@ -277,7 +277,6 @@ if [[ -n "${AGW_user_group}" ]] && [[ "$AGW_user_group" == "develop"* ]]; then
         openssh \
         openssl \
         pcre \
-        pow \
         proj \
         readline \
         ruby \
@@ -289,20 +288,4 @@ if [[ -n "${AGW_user_group}" ]] && [[ "$AGW_user_group" == "develop"* ]]; then
         wget
 
     mkdir ~/workspace
-    POW_HOSTS_DIR="${HOME}/Library/Application Support/Pow/Hosts"
-    mkdir -p "${POW_HOSTS_DIR}"
-    chmod 0775 "${POW_HOSTS_DIR}"
-    ln -sf "${POW_HOSTS_DIR}" ~/.pow
-
-    for item in docsplit-server website; do
-        ln -sf ~"/workspace/${item}" ~"/.pow/${item}"
-    done
-
-    if [[ ! -x "/Users/${HOME}/.rvm/bin/rvm" ]]; then
-        command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-        command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
-        curl -sSL https://get.rvm.io | bash -s stable
-        rvm install 2.6.5
-    fi
 fi
-
