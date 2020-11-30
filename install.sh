@@ -250,7 +250,7 @@ if [[ ! -x /usr/local/bin/brew ]]; then
         google-chrome \
         slack \
         vyprvpn \
-        zoomus
+        zoom
 fi
 
 if [[ -n "${AGW_user_group}" ]] && [[ "$AGW_user_group" == "develop"* ]]; then
@@ -286,6 +286,14 @@ if [[ -n "${AGW_user_group}" ]] && [[ "$AGW_user_group" == "develop"* ]]; then
         tmux \
         tree \
         wget
+
+    brew install \
+        nvm \
+        rbenv \
+        yarn
+
+    brew cask install \
+        postgres
 
     mkdir ~/workspace
 fi
